@@ -1,0 +1,13 @@
+c:\users\nivesh\documents\visual studio 2012\Projects\codeMARS\codeMARS\Bin\Debug\ApplicationIcon.png
+c:\users\nivesh\documents\visual studio 2012\Projects\codeMARS\codeMARS\Bin\Debug\Background.png
+c:\users\nivesh\documents\visual studio 2012\Projects\codeMARS\codeMARS\Bin\Debug\codeMARS.dll
+c:\users\nivesh\documents\visual studio 2012\Projects\codeMARS\codeMARS\Bin\Debug\codeMARS.pdb
+c:\users\nivesh\documents\visual studio 2012\Projects\codeMARS\codeMARS\Bin\Debug\AppManifest.xaml
+c:\users\nivesh\documents\visual studio 2012\Projects\codeMARS\codeMARS\Bin\Debug\codeMARS.xap
+c:\users\nivesh\documents\visual studio 2012\Projects\codeMARS\codeMARS\obj\Debug\codeMARS.csprojResolveAssemblyReference.cache
+c:\users\nivesh\documents\visual studio 2012\Projects\codeMARS\codeMARS\obj\Debug\App.g.cs
+c:\users\nivesh\documents\visual studio 2012\Projects\codeMARS\codeMARS\obj\Debug\MainPage.g.cs
+c:\users\nivesh\documents\visual studio 2012\Projects\codeMARS\codeMARS\obj\Debug\codeMARS.g.resources
+c:\users\nivesh\documents\visual studio 2012\Projects\codeMARS\codeMARS\obj\Debug\codeMARS.dll
+c:\users\nivesh\documents\visual studio 2012\Projects\codeMARS\codeMARS\obj\Debug\codeMARS.pdb
+c:\users\nivesh\documents\visual studio 2012\Projects\codeMARS\codeMARS\obj\Debug\XapCacheFile.xml
