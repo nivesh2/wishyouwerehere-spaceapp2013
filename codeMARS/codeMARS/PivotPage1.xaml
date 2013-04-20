@@ -1,0 +1,87 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="codeMARS.PivotPage1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="PortraitorLandscape"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="False">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="#FF4F4F4F">
+        <!--Pivot Control-->
+        <controls:Pivot >
+            <!--Pivot item one-->
+            <controls:PivotItem Header="Climate">
+				
+                <StackPanel Background="#FF4F4F4F">
+            		<TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="teresstrial date: April 3 2013 UTC" VerticalAlignment="Center" FontSize="21.333" Width="420" TextAlignment="Center"/>
+            		<StackPanel Orientation="Horizontal">
+            			<StackPanel Width="277">
+            				<TextBlock TextWrapping="Wrap" FontSize="80" Margin="0,0,-177,0">
+            					<Run FontWeight="Bold" Text="3"/>
+            					<Run FontSize="21.333" Text="max temp."/>
+            				</TextBlock>
+            				<TextBlock TextWrapping="Wrap" FontSize="21.333">
+            					<Run FontWeight="Bold" Text="-69 "/>
+            					<Run Text="min temperature"/>
+            				</TextBlock>
+            			</StackPanel>
+            			<StackPanel>
+            				<Image Width="183" Source="Cloud-Sun.png" Stretch="UniformToFill" Height="161" Margin="0" HorizontalAlignment="Right"/>
+            			</StackPanel>
+            		</StackPanel>
+            		<StackPanel Orientation="Horizontal" Margin="0" Height="162">
+            			<StackPanel Margin="0,0,0,-47">
+            				<Image Source="Sailor Compass.png" Margin="0,0,168,0" Height="101"/>
+            				<TextBlock TextWrapping="Wrap" Margin="0,0,111,-61">
+            					<Run Text="wind  blowing East"/>
+            					<LineBreak/>
+            					<Run Text="at 7.2km/h"/>
+            				</TextBlock>
+            			</StackPanel>
+            			<TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" FontSize="64" FontWeight="Bold" Margin="0,0,0,10">
+            				<Run Text="sunny"/>
+            				<LineBreak/>
+            				<Run FontWeight="Normal" FontSize="21.333" Text="SOL : 231"/>
+            			</TextBlock>
+            		</StackPanel>
+            		<StackPanel Margin="0">
+            			<TextBlock TextWrapping="Wrap" Text="Humidity : 70%" FontSize="21.333" TextAlignment="Left"/>
+            			<TextBlock TextWrapping="Wrap" Text="Pressure : 889 Pa" FontSize="21.333" TextAlignment="Left"/>
+            			<TextBlock TextWrapping="Wrap" Text="pressure is higher" FontSize="21.333"/>
+            			<TextBlock TextWrapping="Wrap" Text="season : Month 10" FontSize="21.333" TextAlignment="Left"/>
+            			<TextBlock TextWrapping="Wrap" Text="Ls: 294" FontSize="21.333" TextAlignment="Left"/>
+            		</StackPanel>
+            		<StackPanel Height="100" Orientation="Horizontal">
+            			<TextBlock TextWrapping="Wrap" Margin="0">
+            				<Run FontSize="21.333" Text="sunrise "/>
+            				<Run FontSize="26.667" Text=":"/>
+            				<Run FontWeight="Bold" FontSize="48" Text=" 6am"/>
+            			</TextBlock>
+            			<TextBlock TextWrapping="Wrap" Margin="25,0,0,0">
+            				<Run FontSize="21.333" Text="sunset "/>
+            				<Run Text=": "/>
+            				<Run FontWeight="Bold" FontSize="48" Text="5pm"/>
+            				<LineBreak/>
+            			</TextBlock>
+            		</StackPanel>
+            	</StackPanel>
+				
+            </controls:PivotItem>
+
+            <!--Pivot item two-->
+            <controls:PivotItem Header="time">
+                <Grid/>
+            </controls:PivotItem>
+        </controls:Pivot>
+    </Grid>
+    
+</phone:PhoneApplicationPage>

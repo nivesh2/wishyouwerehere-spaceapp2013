@@ -11,3 +11,20 @@ c:\users\nivesh\documents\visual studio 2012\Projects\codeMARS\codeMARS\obj\Debu
 c:\users\nivesh\documents\visual studio 2012\Projects\codeMARS\codeMARS\obj\Debug\codeMARS.dll
 c:\users\nivesh\documents\visual studio 2012\Projects\codeMARS\codeMARS\obj\Debug\codeMARS.pdb
 c:\users\nivesh\documents\visual studio 2012\Projects\codeMARS\codeMARS\obj\Debug\XapCacheFile.xml
+C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\Bin\Debug\ApplicationIcon.png
+C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\Bin\Debug\Background.png
+C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\Bin\Debug\codeMARS.dll
+C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\Bin\Debug\codeMARS.pdb
+C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\Bin\Debug\AppManifest.xaml
+C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\Bin\Debug\codeMARS.xap
+C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\Bin\Debug\Microsoft.Phone.Controls.dll
+C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\Bin\Debug\Microsoft.Phone.Controls.xml
+C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\obj\Debug\codeMARS.csprojResolveAssemblyReference.cache
+C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\obj\Debug\App.g.cs
+C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\obj\Debug\MainPage.g.cs
+C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\obj\Debug\PivotPage1.g.cs
+C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\obj\Debug\codeMARS.g.resources
+C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\obj\Debug\codeMARS.dll
+C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\obj\Debug\codeMARS.pdb
+C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\obj\Debug\XapCacheFile.xml
+C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\obj\Debug\Page1.g.cs
