@@ -76,7 +76,7 @@
                     		</LinearGradientBrush>
                     	</StackPanel.Background>
                         <TextBlock FontSize="64" FontWeight="Bold" Grid.Row="2" Grid.Column="1"  HorizontalAlignment="Right" TextWrapping="Wrap" Name="atm_opacityBlock" VerticalAlignment="Top" />
-                        <TextBlock Name="weather_block"  Grid.Row="2" Grid.Column="1"  HorizontalAlignment="right" TextWrapping="Wrap" VerticalAlignment="Top" />
+                        <TextBlock Name="weather_block" Text="Weather Condition" Grid.Row="2" Grid.Column="1"  HorizontalAlignment="right" TextWrapping="Wrap" VerticalAlignment="Top" />
                     </StackPanel>
 
                     <!-- Display Horizontal list of Archive Data -->
