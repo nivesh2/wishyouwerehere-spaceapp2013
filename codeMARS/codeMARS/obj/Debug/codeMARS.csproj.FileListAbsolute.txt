@@ -26,3 +26,24 @@ C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\
 C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\obj\Debug\XapCacheFile.xml
 C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\obj\Debug\PivotPage1.g.cs
 C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\obj\Debug\codeMARS.csprojResolveAssemblyReference.cache
+C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\Bin\Debug\Microsoft.Phone.Controls.Toolkit.dll
+C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\Bin\Debug\MyToolkit.dll
+C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\Bin\Debug\MyToolkit.Extended.dll
+C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\Bin\Debug\de\MyToolkit.resources.dll
+C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\Bin\Debug\fr\MyToolkit.resources.dll
+C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\Bin\Debug\de\MyToolkit.Extended.resources.dll
+C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\Bin\Debug\fr\MyToolkit.Extended.resources.dll
+C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\Bin\Debug\light\Cloud Cyclone.png
+C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\Bin\Debug\light\Cloud Overcast.png
+C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\Bin\Debug\light\Cloud Rain.png
+C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\Bin\Debug\light\Cloud Snow.png
+C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\Bin\Debug\light\Cloud Thunder.png
+C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\Bin\Debug\light\Cloud-Sun.png
+C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\Bin\Debug\light\Hurricane.png
+C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\Bin\Debug\light\Storm.png
+C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\Bin\Debug\light\Sun.png
+C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\Bin\Debug\light\Thunder.png
+C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\Bin\Debug\mars.png
+C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\Bin\Debug\mars2.png
+C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\Bin\Debug\Earth Node.png
+C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\Bin\Debug\Sailor Compass.png

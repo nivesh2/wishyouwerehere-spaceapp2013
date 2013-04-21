@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2009/deployment" AppPlatformVersion="7.1">
-  <App xmlns="" ProductID="{9321bf6f-e017-4f6a-b94c-689433d323b0}" Title="codeMARS" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="codeMARS author" Description="Sample description" Publisher="codeMARS">
-    <IconPath IsRelative="true" IsResource="false">ApplicationIcon.png</IconPath>
+  <App xmlns="" ProductID="{9321bf6f-e017-4f6a-b94c-689433d323b0}" Title="onMARS" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="codeMARS author" Description="Displays the current weather of MARS, developed under NASA international Space App Challenge." Publisher="codeMARS">
+    <IconPath IsRelative="true" IsResource="false">mars.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_GAMERSERVICES" />
       <Capability Name="ID_CAP_IDENTITY_DEVICE" />
@@ -24,9 +24,9 @@
     <Tokens>
       <PrimaryToken TokenID="codeMARSToken" TaskName="_default">
         <TemplateType5>
-          <BackgroundImageURI IsRelative="true" IsResource="false">Background.png</BackgroundImageURI>
+          <BackgroundImageURI IsRelative="true" IsResource="false">mars2.png</BackgroundImageURI>
           <Count>0</Count>
-          <Title>codeMARS</Title>
+          <Title>onMARS</Title>
         </TemplateType5>
       </PrimaryToken>
     </Tokens>

@@ -12,12 +12,13 @@
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait"  Orientation="Portrait"
-    shell:SystemTray.IsVisible="False">
+    shell:SystemTray.IsVisible="False"
+    xmlns:Controls="clr-namespace:MyToolkit.Controls;assembly=MyToolkit.Extended">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
+    <Grid x:Name="LayoutRoot" Background="#FF636363">
        <!--Pivot Control-->
-        <controls:Pivot Grid.Row="1">
+        <controls:Pivot Grid.Row="1" Foreground="#DEFFFFFF">
             <!--Pivot item one-->
             <controls:PivotItem Header="Climate">
                 <Grid>
@@ -34,39 +35,81 @@
 
                     <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2" >
                         <!--<Image Name="earth_timeImage" HorizontalAlignment="Left" VerticalAlignment="Top" Source="Earth Node.png" Width="38" Height="35" />-->
-                        <TextBlock Text="Current Weather on : April 3 2013 " HorizontalAlignment="Left" TextWrapping="Wrap" Name="Earth_timeBlock" VerticalAlignment="Top" Grid.Row="0" Grid.ColumnSpan="2" FontSize="26.667" Height="35" />
+                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Name="Earth_timeBlock" VerticalAlignment="Top" Grid.Row="0" Grid.ColumnSpan="2" FontSize="26.667" Height="35" />
                     </StackPanel>
 
 
                     <StackPanel Margin="0,0,0,1" Grid.Row="1" Grid.Column="0">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock FontSize="80"  FontWeight="Bold" Text="35°F" Grid.Row="1" Grid.Column="0"  HorizontalAlignment="Left" TextWrapping="Wrap" Name="max_tempBlock" VerticalAlignment="Top" />
-                            <TextBlock Text="high" Grid.Row="1" Grid.Column="0"  HorizontalAlignment="Left" TextWrapping="Wrap" Name="max_tempBlock2" VerticalAlignment="Bottom" FontSize="26.667" Margin="6,0,0,13" />
+                            <TextBlock FontSize="80"  FontWeight="Bold"  Grid.Row="1" Grid.Column="0"  HorizontalAlignment="Left" TextWrapping="Wrap" Name="max_tempBlock" VerticalAlignment="Top" />
+                            <TextBlock  Grid.Row="1" Grid.Column="0"  HorizontalAlignment="Left" TextWrapping="Wrap" Name="max_tempBlock2" VerticalAlignment="Bottom" FontSize="26.667" Margin="6,0,0,13" />
                         </StackPanel>
 
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock FontWeight="Bold" FontSize="32" Text="-93°F" Grid.Row="1" Grid.Column="0"  HorizontalAlignment="Left" TextWrapping="Wrap" Name="min_tempBlock" VerticalAlignment="Top" />
-                            <TextBlock Text="low" Grid.Row="1" Grid.Column="0"  HorizontalAlignment="Left" TextWrapping="Wrap" Name="min_tempBlock2" VerticalAlignment="Bottom" FontSize="21.333" Margin="6,0,0,2" />
+                            <TextBlock FontWeight="Bold" FontSize="32" Grid.Row="1" Grid.Column="0"  HorizontalAlignment="Left" TextWrapping="Wrap" Name="min_tempBlock" VerticalAlignment="Top" />
+                            <TextBlock Grid.Row="1" Grid.Column="0"  HorizontalAlignment="Left" TextWrapping="Wrap" Name="min_tempBlock2" VerticalAlignment="Bottom" FontSize="21.333" Margin="6,0,0,2" />
                         </StackPanel>
                     </StackPanel>
-                        <Image Name="sun_image" Width="183" Source="Cloud-Sun.png" Stretch="UniformToFill" Height="161" Margin="0" HorizontalAlignment="Right" Grid.Row="1" Grid.Column="1"	 />
+                        <Image Name="sun_image" Width="183"  Stretch="UniformToFill" Height="161" Margin="0" HorizontalAlignment="Right" Grid.Row="1" Grid.Column="1"	 />
 
 
-                    <StackPanel Margin="0" Grid.Row="2" Grid.Column="0" >
-                        <TextBlock Text="889 Pa" Grid.Row="2" Grid.Column="0"  HorizontalAlignment="Left" TextWrapping="Wrap" Name="pressureBlock" VerticalAlignment="Top" />
-                        <TextBlock Text="It's Winter Solstice on MARS, Ls = 290°" Grid.Row="2" Grid.Column="0"  HorizontalAlignment="Left" TextWrapping="Wrap" Name="ls_Block" VerticalAlignment="Top" Width="auto" />
+                    <StackPanel Margin="0,15,0,0" Grid.Row="2" Grid.Column="0" >
+                    	<StackPanel.Background>
+                    		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    			<GradientStop Color="White"/>
+                    			<GradientStop Color="#FF636363" Offset="0.03"/>
+                    		</LinearGradientBrush>
+                    	</StackPanel.Background>
+                        <TextBlock  Grid.Row="2" Grid.Column="0"  HorizontalAlignment="Left" TextWrapping="Wrap" Name="pressureBlock" VerticalAlignment="Top" Margin="0,20,0,0" />
+                        <TextBlock  Grid.Row="2" Grid.Column="0"  HorizontalAlignment="Left" TextWrapping="Wrap" Name="ls_Block" VerticalAlignment="Top" Width="auto" />
                         <TextBlock Name="sol_block2" Grid.Row="2" Grid.Column="0"  HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" />
                         <TextBlock Name="ls_Block2" Grid.Row="2" Grid.Column="0"  HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" />
+                        <TextBlock Name="sol_block" Grid.Row="2" Grid.Column="0"  HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" />
 
                     </StackPanel>
                    
-                    <StackPanel Margin="0" Grid.Row="2" Grid.Column="1" >
-                        <TextBlock FontSize="64" FontWeight="Bold" Text="Sunny" Grid.Row="2" Grid.Column="1"  HorizontalAlignment="Right" TextWrapping="Wrap" Name="atm_opacityBlock" VerticalAlignment="Top" />
-                        <TextBlock Name="weather_block" Text="weather conditions" Grid.Row="2" Grid.Column="1"  HorizontalAlignment="right" TextWrapping="Wrap" VerticalAlignment="Top" />
+                    <StackPanel Margin="0,15,0,0" Grid.Row="2" Grid.Column="1" >
+                    	<StackPanel.Background>
+                    		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    			<GradientStop Color="White"/>
+                    			<GradientStop Color="#FF636363" Offset="0.03"/>
+                    		</LinearGradientBrush>
+                    	</StackPanel.Background>
+                        <TextBlock FontSize="64" FontWeight="Bold" Grid.Row="2" Grid.Column="1"  HorizontalAlignment="Right" TextWrapping="Wrap" Name="atm_opacityBlock" VerticalAlignment="Top" />
+                        <TextBlock Name="weather_block"  Grid.Row="2" Grid.Column="1"  HorizontalAlignment="right" TextWrapping="Wrap" VerticalAlignment="Top" />
                     </StackPanel>
 
                     <!-- Display Horizontal list of Archive Data -->
+                    
+                    <ListBox x:Name="list" Width="480" Grid.Row="3" Grid.ColumnSpan="2" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Visible" Foreground="#DEFFFFFF">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Margin="20" Width="60">
 
+                                    <StackPanel>
+                                    	<StackPanel.Background>
+                                    		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    			<GradientStop Color="#FF636363" Offset="0.95"/>
+                                    			<GradientStop Color="White" Offset="1"/>
+                                    		</LinearGradientBrush>
+                                    	</StackPanel.Background>
+                                   
+                                    <TextBlock HorizontalAlignment="Center" Text="{Binding sol}"/>
+                                    </StackPanel>
+
+                                    <Image Source="{Binding ImagePath}" Stretch="Uniform" Width="60" Height="50" Margin="0,4,0,0"/>
+                                    <TextBlock Margin="2" HorizontalAlignment="Center" Text="{Binding max_temp_fahrenheit}"/>
+                                    <TextBlock Margin="2" HorizontalAlignment="Center" Text="{Binding min_temp_fahrenheit}"/>
+                               </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                        <ListBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal"/>
+                                <!--<toolkit:WrapPanel/>-->
+                            </ItemsPanelTemplate>
+                        </ListBox.ItemsPanel>
+                    </ListBox>
 
                 </Grid>
             </controls:PivotItem>
@@ -80,20 +123,50 @@
                     </Grid.RowDefinitions>
                     
                     <StackPanel Grid.Row="0" Width="auto" Height="auto">
-                        <Image Name="direction_image" Source="/direction/light/n.png" VerticalAlignment="Center" HorizontalAlignment="Stretch"/>
-                        <TextBlock Name="wind_directionBlock" Text="Direction : North" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-                        <TextBlock Name="wind_speedBlock" Text="Wind Speed : 4 km/h" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-                        <TextBlock Name="wind_dateBlock" Text="Record Date:---" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                        <Image Name="direction_image"  VerticalAlignment="Center" HorizontalAlignment="Stretch"/>
+                        <TextBlock Name="wind_directionBlock"  HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                        <TextBlock Name="wind_speedBlock"  HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                        <TextBlock Name="wind_dateBlock"  HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
                     </StackPanel>
 
                 </Grid>
             </controls:PivotItem>
 
-            <controls:PivotItem Header="time">
-                <Grid/>
+            <controls:PivotItem Header="Videos">
+                <Grid>
+                    <ScrollViewer>
+                        <StackPanel Width="auto" Height="auto">
+
+                            <Controls:YouTubeButton YouTubeID="ei1eOZ2BOxQ" Click="OnButtonClick" Foreground="#DE000000" />
+                            <TextBlock Text="REMS ON MARS" Foreground="#DEFFFFFF" FontSize="20"/>
+
+                            <Controls:YouTubeButton YouTubeID="CleG0cQ0JWs" Click="OnButtonClick" Margin="0,20,0,0" />
+                            <TextBlock Text="Curiosity Measures Martian Weather" Foreground="#DEFFFFFF"/>
+
+                            <Controls:YouTubeButton YouTubeID="n4tgkyUBkbY" Click="OnButtonClick" Margin="0,20,0,0" />
+                            <TextBlock Text="Mission MARS ONE" Foreground="#DEFFFFFF"/>
+
+                        </StackPanel>
+                    </ScrollViewer>
+                </Grid>
             </controls:PivotItem>
         </controls:Pivot>
     </Grid>
 
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" Mode="Default" Opacity="0.45" ForegroundColor="White" >
+
+            <shell:ApplicationBarIconButton IconUri="/Images/save.png" Text="save"  />
+            <shell:ApplicationBarIconButton IconUri="/Images/delete.png" Text="New" Click="new_click"  />
+            <shell:ApplicationBarIconButton IconUri="/Images/help.png" Text="help" />
+            <shell:ApplicationBarIconButton IconUri="/Images/settings.png" Text="settings"  />
+
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="Videos"  />
+                <shell:ApplicationBarMenuItem Text="About" />
+            </shell:ApplicationBar.MenuItems>
+
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
 </phone:PhoneApplicationPage>

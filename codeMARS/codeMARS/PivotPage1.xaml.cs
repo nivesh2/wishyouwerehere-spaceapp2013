@@ -14,6 +14,10 @@ using System.IO;
 using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Windows.Media.Imaging;
+using System.ComponentModel;
+using MyToolkit.Multimedia;
+using System.Windows.Navigation;
+using MyToolkit.Controls;
 
 namespace codeMARS
 {
@@ -23,7 +27,39 @@ namespace codeMARS
         {
             InitializeComponent();
             work();
+            
         }
+        #region video
+        protected override void OnBackKeyPress(CancelEventArgs e)
+        {
+            if (YouTube.CancelPlay()) // used to abort current youtube download
+                e.Cancel = true;
+            else
+            {
+                // your code here
+            }
+            base.OnBackKeyPress(e);
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            YouTube.CancelPlay(); // used to reenable page
+
+            // your code here
+            base.OnNavigatedTo(e);
+        }
+
+        private void OnButtonClick(object o, RoutedEventArgs e)
+        {
+            var ctrl = (YouTubeButton)o;
+
+            YouTube.Play(ctrl.YouTubeID, true, YouTubeQuality.Quality480P, x =>
+            {
+                if (x != null)
+                    MessageBox.Show(x.Message);
+            });
+        }
+        #endregion
 
         public void work()
         {
@@ -36,6 +72,7 @@ namespace codeMARS
                     RootObject deserializedData = ReadToObject(json);
                     updateHomePage(deserializedData.results[0]);
                     updateWindDirection(deserializedData.results[0]);
+                    updateArchiveList(deserializedData);
 
                 }
             };
@@ -79,13 +116,26 @@ namespace codeMARS
                 atm_opacityBlock.Text = r.atmo_opacity;
             }
             
-            //sol_block.Text = "Mars Date: " + r.sol.ToString() + " sol ";
+            
+            sun_image.Source = new BitmapImage(new Uri(path(r), UriKind.Relative));
+            sol_block.Text = "SOL : " + r.sol;
+            
+        
         }
 
-        public void updateArchiveList(Result r)
+        public void updateArchiveList(RootObject r)
         {
-             
+
+            List<SampleResult> sl = new List<SampleResult>();
+
+            foreach (var item in r.results)
+            {
+                sl.Add(new SampleResult() { sol = item.sol, max_temp_fahrenheit=item.max_temp_fahrenheit.ToString("#")+"°F",min_temp_fahrenheit =item.min_temp_fahrenheit.ToString("#") + "°F", ImagePath = path(item) });
+                                
+            }         
+            this.list.ItemsSource =sl;           
         }
+
 
         public void updateWindDirection(Result r)
         {
@@ -150,6 +200,39 @@ namespace codeMARS
 
         }
 
+        public string path(Result r)
+        {
+            string imagepath="/light/Cloud-Sun.png";
+
+            if (r.atmo_opacity == null)
+            {
+                imagepath = "/light/Sun.png";
+            }
+            else if (r.atmo_opacity == "Sunny")
+            {
+                imagepath = "/light/Sun.png";
+            }
+            else if (r.atmo_opacity == "Cloudy")
+            {
+                imagepath = "/light/Cloud-Sun.png";
+            }
+            else if (r.atmo_opacity == "Thunder")
+            {
+                imagepath = "/light/Thunder.png";
+            }
+            else if (r.atmo_opacity == "Rainy")
+            {
+                imagepath = "/light/Cloud Rain.png";
+            }
+            else if (r.atmo_opacity == "Storm")
+            {
+                imagepath = "/light/Storm.png";
+            }
+
+            return imagepath;
+
+
+        }
         public string month(string s)
         {
             string s1 = s.Substring(0, 4);
@@ -214,52 +297,52 @@ namespace codeMARS
 
             if (d>=0 && d<30 )
             {
-                s = "Early NH Spring";
+                s = "Early Northern Spring";
                 
             }
             else if (d>=30 && d<60)
             {
-                s = "NH Spring";
+                s = "Northern Spring";
             }
             else if (d>=60 && d<90)
             {
-                s = "Late NH Spring";                
+                s = "Late Northern Spring";                
             }
             else if (d >= 90 && d < 120)
             {
-                s = "Early NH Summer";
+                s = "Early Northern Summer";
             }
             else if (d >= 120 && d < 150)
             {
-                s = "NH Summer";
+                s = "Northern Summer";
             }
             else if (d >= 150 && d < 180)
             {
-                s = "Late NH Summer";
+                s = "Late Northern Summer";
             }
             else if (d >= 180 && d < 210)
             {
-                s = "Early NH Fall";
+                s = "Early Northern Autumn";
             }
             else if (d >= 210 && d < 240)
             {
-                s = "NH Fall";
+                s = "Northern Autumn";
             }
             else if (d >= 240 && d < 270)
             {
-                s = "Late NH Fall";
+                s = "Late Northern Autumn";
             }
             else if (d >= 270 && d < 300)
             {
-                s = "Early NH Winter";
+                s = "Early Northern Winter";
             }
             else if (d >= 300 && d < 330)
             {
-                s = "NH Winter";
+                s = "Northern Winter";
             }
             else if (d>=330 )
             {
-                s = "Late NH Winter";
+                s = "Late Northern Winter";
             }
 
 
@@ -287,11 +370,31 @@ namespace codeMARS
             return s;
 
         }
-        
+
+      
 
     }// end of main class
 
 
+
+    public class SampleResult
+    {
+        public string ImagePath
+        {
+            get;
+            set;
+        }
+
+        public int sol
+        {
+            get;
+            set;
+        }
+
+        public string max_temp_fahrenheit { get; set; }
+        public string min_temp_fahrenheit { get; set; }
+
+    }
     public class Result
     {
         public string terrestrial_date { get; set; }
