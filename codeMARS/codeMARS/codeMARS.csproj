@@ -92,6 +92,14 @@
     <Content Include="Background.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="direction\light\e.png" />
+    <Content Include="direction\light\n.png" />
+    <Content Include="direction\light\ne.png" />
+    <Content Include="direction\light\nw.png" />
+    <Content Include="direction\light\s.png" />
+    <Content Include="direction\light\se.png" />
+    <Content Include="direction\light\sw.png" />
+    <Content Include="direction\light\w.png" />
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>
   <ItemGroup>

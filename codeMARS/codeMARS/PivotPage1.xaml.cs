@@ -13,6 +13,7 @@ using Microsoft.Phone.Controls;
 using System.IO;
 using System.Runtime.Serialization.Json;
 using System.Text;
+using System.Windows.Media.Imaging;
 
 namespace codeMARS
 {
@@ -34,6 +35,8 @@ namespace codeMARS
                     string json = args.Result;
                     RootObject deserializedData = ReadToObject(json);
                     updateHomePage(deserializedData.results[0]);
+                    updateWindDirection(deserializedData.results[0]);
+
                 }
             };
             client.DownloadStringAsync(new Uri("http://marsweather.ingenology.com/v1/archive/?format=json"));
@@ -54,14 +57,13 @@ namespace codeMARS
 
         public void updateHomePage(Result r)
         {
-            Earth_timeBlock.Text = "Last Updated on: " + r.terrestrial_date.ToString();
+            Earth_timeBlock.Text = "Mars Weather on " + month(r.terrestrial_date);
 
             max_tempBlock.Text = r.max_temp_fahrenheit.ToString("#") + "°F";
             min_tempBlock.Text = r.min_temp_fahrenheit.ToString() + "°F";
 
 
-            pressureBlock.Text = "MARS Pressure is " + r.pressure_string + " around: " + r.pressure.ToString("#") + " Pa";
-
+            pressureBlock.Text = "Pressure : " + r.pressure.ToString("#") + " Pa, " + r.pressure_string;
 
             ls_Block.Text = season(r.ls) + r.ls.ToString() + "°";
             sol_block2.Text = season2(r.ls);
@@ -76,7 +78,7 @@ namespace codeMARS
                 atm_opacityBlock.Text = r.atmo_opacity;
             }
             
-            sol_block.Text = "Mars Date: " + r.sol.ToString() + " sol";
+            //sol_block.Text = "Mars Date: " + r.sol.ToString() + " sol ";
         }
 
         public void updateArchiveList(Result r)
@@ -84,7 +86,127 @@ namespace codeMARS
              
         }
 
+        public void updateWindDirection(Result r)
+        {
+            string img = "/direction";
+            string theme="/light";
+            string dr ="North";
+            img += theme;
+            
+            #region wind direction
+            string wd = r.wind_direction;
+            
+            if (wd == "E")
+            {
+                img += "/e.png"; 
+                dr = "EAST";
+            }
+            else if (wd == "S")
+            {
+                img += "/s.png";
+                dr = "SOUTH";
+                
+            }
+            else if (wd == "N")
+            {
+                img += "/n.png";
+                dr = "North";
+            }
+            else if (wd == "W")
+            {
+                img += "/w.png";
+                dr = "WEST";
+            }
+            else if (wd == "NW")
+            {
+                img += "/nw.png";
+                dr = "North-West";
+            }
+            else if (wd == "NE")
+            {
+                img += "/ne.png";
+                dr = "North-East";
+            }
+            else if (wd == "SW")
+            {
+                img += "/sw.png";
+                dr = "South-West";
+            }
+            else if (wd == "SE")
+            {
+                img += "/se.png";
+                dr = "South-East";          
+            }
+#endregion
 
+
+
+
+            direction_image.Source = new BitmapImage(new Uri(img, UriKind.Relative));
+            wind_directionBlock.Text = "Direction : " + dr;
+            wind_speedBlock.Text = "Wind Speed : " + r.wind_speed.ToString() + " m/s";
+            wind_dateBlock.Text = "Record Date : " + month(r.terrestrial_date);
+
+        }
+
+        public string month(string s)
+        {
+            string s1 = s.Substring(0, 4);
+            string s2 = s.Substring(5, 2);
+            string s3 = s.Substring(8, 2);
+
+            if (s2=="01")
+            {
+                s2 = "January";
+            }
+            else if (s2=="02")
+            {
+                s2 = "February";
+            }
+            else if (s2 == "03")
+            {
+                s2 = "March";
+            }
+            else if (s2 == "04")
+            {
+                s2 = "April";
+            }
+            else if (s2 == "05")
+            {
+                s2 = "May";
+            }
+            else if (s2 == "06")
+            {
+                s2 = "June";
+            }
+            else if (s2 == "07")
+            {
+                s2 = "July";
+            }
+            else if (s2 == "08")
+            {
+                s2 = "August";
+            }
+            else if (s2 == "09")
+            {
+                s2 = "September";
+            }
+            else if (s2 == "10")
+            {
+                s2 = "October";
+            }
+            else if (s2 == "11")
+            {
+                s2 = "November";
+            }
+            else if (s2 == "12")
+            {
+                s2 = "December";
+            }
+
+            return s3 + " " + s2 + " " + s1;
+ 
+        }
         public string season(double d)
         {
             string s="";

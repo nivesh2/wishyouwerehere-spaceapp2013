@@ -20,11 +20,9 @@ C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\
 C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\Bin\Debug\Microsoft.Phone.Controls.dll
 C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\Bin\Debug\Microsoft.Phone.Controls.xml
 C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\obj\Debug\App.g.cs
-C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\obj\Debug\MainPage.g.cs
 C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\obj\Debug\codeMARS.g.resources
 C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\obj\Debug\codeMARS.dll
 C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\obj\Debug\codeMARS.pdb
 C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\obj\Debug\XapCacheFile.xml
-C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\obj\Debug\Page1.g.cs
 C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\obj\Debug\PivotPage1.g.cs
 C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\obj\Debug\codeMARS.csprojResolveAssemblyReference.cache

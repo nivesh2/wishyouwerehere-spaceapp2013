@@ -12,12 +12,12 @@
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait"  Orientation="Portrait"
-    shell:SystemTray.IsVisible="True">
+    shell:SystemTray.IsVisible="False">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
-        <!--Pivot Control-->
-        <controls:Pivot>
+       <!--Pivot Control-->
+        <controls:Pivot Grid.Row="1">
             <!--Pivot item one-->
             <controls:PivotItem Header="Climate">
                 <Grid>
@@ -33,7 +33,7 @@
                     </Grid.RowDefinitions>
 
                     <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2" >
-                        <Image Name="earth_timeImage" HorizontalAlignment="Left" VerticalAlignment="Top" Source="Earth Node.png" Width="38" Height="35" />
+                        <!--<Image Name="earth_timeImage" HorizontalAlignment="Left" VerticalAlignment="Top" Source="Earth Node.png" Width="38" Height="35" />-->
                         <TextBlock Text="Current Weather on : April 3 2013 " HorizontalAlignment="Left" TextWrapping="Wrap" Name="Earth_timeBlock" VerticalAlignment="Top" Grid.Row="0" Grid.ColumnSpan="2" FontSize="26.667" Height="35" />
                     </StackPanel>
 
@@ -60,7 +60,7 @@
                    
                     <StackPanel Margin="0" Grid.Row="2" Grid.Column="1" >
                         <TextBlock FontSize="64" FontWeight="Bold" Text="Sunny" Grid.Row="2" Grid.Column="1"  HorizontalAlignment="Right" TextWrapping="Wrap" Name="atm_opacityBlock" VerticalAlignment="Top" />
-                        <TextBlock Name="sol_block" Text="SOL: 231" Grid.Row="2" Grid.Column="1"  HorizontalAlignment="right" TextWrapping="Wrap" VerticalAlignment="Top" />
+                        <TextBlock Name="weather_block" Text="weather conditions" Grid.Row="2" Grid.Column="1"  HorizontalAlignment="right" TextWrapping="Wrap" VerticalAlignment="Top" />
                     </StackPanel>
 
                     <!-- Display Horizontal list of Archive Data -->
@@ -71,7 +71,21 @@
 
             <!--Pivot item two-->
             <controls:PivotItem Header="Wind Flow">
-                <Grid/>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>                        
+                    </Grid.RowDefinitions>
+                    
+                    <StackPanel Grid.Row="0" Width="auto" Height="auto">
+                        <Image Name="direction_image" Source="/direction/light/n.png" VerticalAlignment="Center" HorizontalAlignment="Stretch"/>
+                        <TextBlock Name="wind_directionBlock" Text="Direction : North" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                        <TextBlock Name="wind_speedBlock" Text="Wind Speed : 4 km/h" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                        <TextBlock Name="wind_dateBlock" Text="Record Date:---" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+                    </StackPanel>
+
+                </Grid>
             </controls:PivotItem>
 
             <controls:PivotItem Header="time">
