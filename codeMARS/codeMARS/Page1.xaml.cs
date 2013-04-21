@@ -24,6 +24,7 @@ namespace codeMARS
             InitializeComponent();
         }
 
+        // same as UpdateHomePAGE only index number is changed, which we get with the help from QueryString
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             string s;

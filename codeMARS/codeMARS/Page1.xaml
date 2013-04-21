@@ -55,17 +55,17 @@
         </Grid.RowDefinitions>
 
 
-            <StackPanel Grid.Row="0" Orientation="Vertical" Grid.ColumnSpan="2" >
-            <TextBlock x:Name="sol_block" Grid.Row="0"  HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="30" FontWeight="Bold" Margin="0,10" />
+            <StackPanel Grid.Row="0" Orientation="Vertical" Grid.ColumnSpan="2" Margin="12,0,0,0" >
+            <TextBlock x:Name="sol_block" Grid.Row="0"  HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="53.333" Margin="0,10" />
             <!--<Image Name="earth_timeImage" HorizontalAlignment="Left" VerticalAlignment="Top" Source="Earth Node.png" Width="38" Height="35" />-->
                 <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" x:Name="Earth_timeBlock" VerticalAlignment="Top" Grid.Row="0" Grid.ColumnSpan="2" FontSize="26.667" Height="35" />
             </StackPanel>
 
 
-            <StackPanel Margin="0,0,0,1" Grid.Row="1" Grid.Column="0">
+            <StackPanel Margin="12,0,0,1" Grid.Row="1" Grid.Column="0">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock FontSize="80"  FontWeight="Bold"  Grid.Row="1" Grid.Column="0"  HorizontalAlignment="Left" TextWrapping="Wrap" x:Name="max_tempBlock" VerticalAlignment="Top" />
-                    <TextBlock  Grid.Row="1" Grid.Column="0"  HorizontalAlignment="Left" TextWrapping="Wrap" x:Name="max_tempBlock2" VerticalAlignment="Bottom" FontSize="26.667" Margin="6,0,0,13" />
+                    <TextBlock FontSize="93.333"  FontWeight="Bold"  Grid.Row="1" Grid.Column="0"  HorizontalAlignment="Left" TextWrapping="Wrap" x:Name="max_tempBlock" VerticalAlignment="Top" />
+                    <TextBlock  Grid.Row="1" Grid.Column="0"  HorizontalAlignment="Left" TextWrapping="Wrap" x:Name="max_tempBlock2" VerticalAlignment="Bottom" FontSize="40" Margin="6,0,0,13" />
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal">
@@ -76,11 +76,11 @@
             <Image x:Name="sun_image" Width="183"  Stretch="UniformToFill" Height="161" Margin="0" HorizontalAlignment="Right" Grid.Row="1" Grid.Column="1"	 />
 
 
-            <StackPanel Margin="0,15,0,0" Grid.Row="2" Grid.Column="0" >
+            <StackPanel Margin="12,15,0,0" Grid.Row="2" Grid.Column="0" >
                 <StackPanel.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="White"/>
-                        <GradientStop Color="#FF636363" Offset="0.03"/>
+                        <GradientStop Color="Gray" Offset="0.03"/>
                     </LinearGradientBrush>
                 </StackPanel.Background>
                 <TextBlock  Grid.Row="2" Grid.Column="0"  HorizontalAlignment="Left" TextWrapping="Wrap" x:Name="pressureBlock" VerticalAlignment="Top" Margin="0,20,0,0" />
@@ -90,23 +90,22 @@
             
             </StackPanel>
 
-            <StackPanel Margin="0,15,0,0" Grid.Row="2" Grid.Column="1" >
+            <StackPanel Margin="0,15,12,0" Grid.Row="2" Grid.Column="1" >
                 <StackPanel.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="White"/>
-                        <GradientStop Color="#FF636363" Offset="0.03"/>
+                        <GradientStop Color="Gray" Offset="0.03"/>
                     </LinearGradientBrush>
                 </StackPanel.Background>
                 <TextBlock FontSize="64" FontWeight="Bold" Grid.Row="2" Grid.Column="1"  HorizontalAlignment="Right" TextWrapping="Wrap" x:Name="atm_opacityBlock" VerticalAlignment="Top" />
-                <TextBlock x:Name="weather_block" Text="Weather Condition" Grid.Row="2" Grid.Column="1"  HorizontalAlignment="right" TextWrapping="Wrap" VerticalAlignment="Top" />
+                <TextBlock x:Name="weather_block" Text="Weather Condition" Grid.Row="2" Grid.Column="1"  HorizontalAlignment="right" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#DEFFFFFF" />
             </StackPanel>
-
-        <StackPanel Grid.Row="3" Grid.ColumnSpan="2" Width="auto" Height="auto">
+        <StackPanel Grid.Row="3" Grid.ColumnSpan="2" Width="auto" Height="auto" Margin="12,0,0,0">
             
-            <Image x:Name="direction_image"  VerticalAlignment="Center" HorizontalAlignment="Stretch" Width="200" Height="200"/>
-            <TextBlock x:Name="wind_directionBlock"  HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <TextBlock x:Name="wind_speedBlock"  HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <TextBlock x:Name="wind_dateBlock"  HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        	<Image x:Name="direction_image"  VerticalAlignment="Center" HorizontalAlignment="Stretch" Width="200" Height="200"/>
+        	<TextBlock x:Name="wind_directionBlock"  HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        	<TextBlock x:Name="wind_speedBlock"  HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        	<TextBlock x:Name="wind_dateBlock"  HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
         </StackPanel>
     </Grid>

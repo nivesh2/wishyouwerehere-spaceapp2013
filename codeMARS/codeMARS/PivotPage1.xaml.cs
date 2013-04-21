@@ -28,37 +28,31 @@ namespace codeMARS
 
         public PivotPage1()
         {
-            InitializeComponent();
-
-          
+            InitializeComponent();         
             
         }      
 
-          protected override void OnNavigatedTo(NavigationEventArgs e)
-            {
-              
 
-                if (appSettings.Contains("json"))
-                {
-                                    
-                    updateALL((string)appSettings["json"]); // load the last weather report json data,
-                }
-                else
-                {
-                   
-                }
-              
-                work();
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
 
-                base.OnNavigatedTo(e);
+            // load the last weather report json data,
+            if (appSettings.Contains("json"))
+            {                       
+                updateALL((string)appSettings["json"]); 
             }
+              
+            work();
+
+            base.OnNavigatedTo(e);
+        }
 
       
 
         public void work()
         {
            
-             
+            // fetching weather report from MAAS API as json data
             var client = new WebClient();
             client.DownloadStringCompleted += (sender, args) =>
             {
@@ -98,7 +92,7 @@ namespace codeMARS
 
         public void updateALL(string json)
         {
-
+            // deserialising json data
             RootObject deserializedData = ReadToObject(json);           
             updateHomePage(deserializedData.results[0]);
             updateWindDirection(deserializedData.results[0]);
@@ -117,6 +111,7 @@ namespace codeMARS
             return deserializedUser;
         }
 
+        //Updating UI of the Pivot ITEM 1
         public void updateHomePage(Result r)
         {
             Earth_timeBlock.Text = "Mars Weather on " + month(r.terrestrial_date);
@@ -148,6 +143,7 @@ namespace codeMARS
         
         }
 
+        //Updating the Past 10 weather report list
         public void updateArchiveList(RootObject r)
         {
 
@@ -161,7 +157,7 @@ namespace codeMARS
             this.list.ItemsSource =sl;           
         }
 
-
+        // Updating the wind section
         public void updateWindDirection(Result r)
         {
             string img = "/direction";
@@ -214,10 +210,7 @@ namespace codeMARS
                 dr = "South-East";          
             }
 #endregion
-
-
-
-
+          
             direction_image.Source = new BitmapImage(new Uri(img, UriKind.Relative));
             wind_directionBlock.Text = "Direction : " + dr;
             wind_speedBlock.Text = "Wind Speed : " + r.wind_speed.ToString() + " m/s";
@@ -225,6 +218,7 @@ namespace codeMARS
 
         }
 
+        // Correct path for image, relating to correct weather condition
         public string path(Result r)
         {
             string imagepath="/light/Cloud-Sun.png";
@@ -255,9 +249,8 @@ namespace codeMARS
             }
 
             return imagepath;
-
-
         }
+
         public string month(string s)
         {
             string s1 = s.Substring(0, 4);
@@ -370,7 +363,6 @@ namespace codeMARS
                 s = "Late Northern Winter";
             }
 
-
             return s;
 
         }
@@ -405,34 +397,22 @@ namespace codeMARS
         {
             NavigationService.Navigate(new Uri("/about.xaml", UriKind.Relative));
         }
+        
         int id = 0;
+        
         private void list_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
-           
             var selectedItem = (sender as ListBox);
             if (selectedItem == null) return;
             if (selectedItem.SelectedIndex!=-1)
 	        {
-
-		        id=selectedItem.SelectedIndex;
-                
-	        }
-           
+                id=selectedItem.SelectedIndex;
+            }
             (sender as ListBox).SelectedIndex = -1;
-
-
             NavigationService.Navigate(new Uri("/Page1.xaml?id=" + id.ToString(), UriKind.Relative));
-
-           
-            
         }
-
-      
-
     }// end of main class
-
-
 
     public class SampleResult
     {
