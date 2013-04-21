@@ -1,0 +1,91 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="codeMARS.Page1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="False">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Gray">
+       
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+
+
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+              
+           
+        </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0" Orientation="Vertical" Grid.ColumnSpan="2" >
+            <TextBlock Name="sol_block" Grid.Row="0"  HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="30" FontWeight="Bold" Margin="0,10" />
+            <!--<Image Name="earth_timeImage" HorizontalAlignment="Left" VerticalAlignment="Top" Source="Earth Node.png" Width="38" Height="35" />-->
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Name="Earth_timeBlock" VerticalAlignment="Top" Grid.Row="0" Grid.ColumnSpan="2" FontSize="26.667" Height="35" />
+            </StackPanel>
+
+
+            <StackPanel Margin="0,0,0,1" Grid.Row="1" Grid.Column="0">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock FontSize="80"  FontWeight="Bold"  Grid.Row="1" Grid.Column="0"  HorizontalAlignment="Left" TextWrapping="Wrap" Name="max_tempBlock" VerticalAlignment="Top" />
+                    <TextBlock  Grid.Row="1" Grid.Column="0"  HorizontalAlignment="Left" TextWrapping="Wrap" Name="max_tempBlock2" VerticalAlignment="Bottom" FontSize="26.667" Margin="6,0,0,13" />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock FontWeight="Bold" FontSize="32" Grid.Row="1" Grid.Column="0"  HorizontalAlignment="Left" TextWrapping="Wrap" Name="min_tempBlock" VerticalAlignment="Top" />
+                    <TextBlock Grid.Row="1" Grid.Column="0"  HorizontalAlignment="Left" TextWrapping="Wrap" Name="min_tempBlock2" VerticalAlignment="Bottom" FontSize="21.333" Margin="6,0,0,2" />
+                </StackPanel>
+            </StackPanel>
+            <Image Name="sun_image" Width="183"  Stretch="UniformToFill" Height="161" Margin="0" HorizontalAlignment="Right" Grid.Row="1" Grid.Column="1"	 />
+
+
+            <StackPanel Margin="0,15,0,0" Grid.Row="2" Grid.Column="0" >
+                <StackPanel.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White"/>
+                        <GradientStop Color="#FF636363" Offset="0.03"/>
+                    </LinearGradientBrush>
+                </StackPanel.Background>
+                <TextBlock  Grid.Row="2" Grid.Column="0"  HorizontalAlignment="Left" TextWrapping="Wrap" Name="pressureBlock" VerticalAlignment="Top" Margin="0,20,0,0" />
+                <TextBlock  Grid.Row="2" Grid.Column="0"  HorizontalAlignment="Left" TextWrapping="Wrap" Name="ls_Block" VerticalAlignment="Top" Width="auto" />
+                <TextBlock Name="sol_block2" Grid.Row="2" Grid.Column="0"  HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" />
+                <TextBlock Name="ls_Block2" Grid.Row="2" Grid.Column="0"  HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" />
+            
+            </StackPanel>
+
+            <StackPanel Margin="0,15,0,0" Grid.Row="2" Grid.Column="1" >
+                <StackPanel.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White"/>
+                        <GradientStop Color="#FF636363" Offset="0.03"/>
+                    </LinearGradientBrush>
+                </StackPanel.Background>
+                <TextBlock FontSize="64" FontWeight="Bold" Grid.Row="2" Grid.Column="1"  HorizontalAlignment="Right" TextWrapping="Wrap" Name="atm_opacityBlock" VerticalAlignment="Top" />
+                <TextBlock Name="weather_block" Text="Weather Condition" Grid.Row="2" Grid.Column="1"  HorizontalAlignment="right" TextWrapping="Wrap" VerticalAlignment="Top" />
+            </StackPanel>
+
+        <StackPanel Grid.Row="3" Grid.ColumnSpan="2" Width="auto" Height="auto">
+            
+            <Image Name="direction_image"  VerticalAlignment="Center" HorizontalAlignment="Stretch" Width="200" Height="200"/>
+            <TextBlock Name="wind_directionBlock"  HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <TextBlock Name="wind_speedBlock"  HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <TextBlock Name="wind_dateBlock"  HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+        </StackPanel>
+    </Grid>
+    
+
+</phone:PhoneApplicationPage>

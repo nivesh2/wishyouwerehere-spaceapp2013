@@ -18,48 +18,36 @@ using System.ComponentModel;
 using MyToolkit.Multimedia;
 using System.Windows.Navigation;
 using MyToolkit.Controls;
+using System.IO.IsolatedStorage;
 
 namespace codeMARS
 {
     public partial class PivotPage1 : PhoneApplicationPage
     {
+        IsolatedStorageSettings appSettings = IsolatedStorageSettings.ApplicationSettings;
+
         public PivotPage1()
         {
             InitializeComponent();
-            work();
+
+          
             
-        }
-        #region video
-        protected override void OnBackKeyPress(CancelEventArgs e)
-        {
-            if (YouTube.CancelPlay()) // used to abort current youtube download
-                e.Cancel = true;
-            else
+        }      
+
+          protected override void OnNavigatedTo(NavigationEventArgs e)
             {
-                // your code here
+
+                if (appSettings.Contains("json"))
+                {
+                    updateALL((string)appSettings["json"]); // load the last weather report json data,
+                }
+
+                work();
+
+                base.OnNavigatedTo(e);
             }
-            base.OnBackKeyPress(e);
-        }
 
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
-            YouTube.CancelPlay(); // used to reenable page
-
-            // your code here
-            base.OnNavigatedTo(e);
-        }
-
-        private void OnButtonClick(object o, RoutedEventArgs e)
-        {
-            var ctrl = (YouTubeButton)o;
-
-            YouTube.Play(ctrl.YouTubeID, true, YouTubeQuality.Quality480P, x =>
-            {
-                if (x != null)
-                    MessageBox.Show(x.Message);
-            });
-        }
-        #endregion
+      
 
         public void work()
         {
@@ -69,15 +57,41 @@ namespace codeMARS
                 if (args.Error == null)
                 {
                     string json = args.Result;
-                    RootObject deserializedData = ReadToObject(json);
-                    updateHomePage(deserializedData.results[0]);
-                    updateWindDirection(deserializedData.results[0]);
-                    updateArchiveList(deserializedData);
+
+                    #region saving json data for the first time app is launched
+                    if (!appSettings.Contains("json"))
+                    {
+                        try
+                        {
+                            appSettings.Add("json", json);
+                        }
+                        catch (Exception)
+                        {
+                            appSettings["json"] = json;
+
+                        }
+                                                
+                    }
+                    else
+                    {
+                        appSettings["json"] = json; //Updating json as new weather report is sent
+                    }
+                    #endregion
+
+                    updateALL(json);                   
 
                 }
             };
             client.DownloadStringAsync(new Uri("http://marsweather.ingenology.com/v1/archive/?format=json"));
 
+        }
+
+        public void updateALL(string json)
+        {
+            RootObject deserializedData = ReadToObject(json);
+            updateHomePage(deserializedData.results[0]);
+            updateWindDirection(deserializedData.results[0]);
+            updateArchiveList(deserializedData);
         }
 
 
@@ -369,6 +383,38 @@ namespace codeMARS
 
             return s;
 
+        }
+
+        private void ApplicationBarIconButton_Click_1(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/video.xaml",UriKind.Relative));
+        }
+
+        private void ApplicationBarIconButton_Click_2(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/about.xaml", UriKind.Relative));
+        }
+        int id = 0;
+        private void list_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+           
+            var selectedItem = (sender as ListBox);
+            if (selectedItem == null) return;
+            if (selectedItem.SelectedIndex!=-1)
+	        {
+
+		        id=selectedItem.SelectedIndex;
+                
+	        }
+           
+            (sender as ListBox).SelectedIndex = -1;
+
+
+            NavigationService.Navigate(new Uri("/Page1.xaml?id=" + id.ToString(), UriKind.Relative));
+
+           
+            
         }
 
       

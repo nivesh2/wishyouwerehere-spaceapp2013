@@ -34,3 +34,8 @@ C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\
 C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\obj\Release\codeMARS.pdb
 C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\obj\Release\XapCacheFile.xml
 C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\obj\Release\codeMARS.csprojResolveAssemblyReference.cache
+C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\Bin\Release\appbar\about.png
+C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\Bin\Release\appbar\video.png
+C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\obj\Release\video.g.cs
+C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\obj\Release\about.g.cs
+C:\Users\nivesh\Documents\GitHub\wishyouwerehere-spaceapp2013\codeMARS\codeMARS\obj\Release\Page1.g.cs

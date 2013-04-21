@@ -81,7 +81,7 @@
 
                     <!-- Display Horizontal list of Archive Data -->
                     
-                    <ListBox x:Name="list" Width="480" Grid.Row="3" Grid.ColumnSpan="2" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Visible" Foreground="#DEFFFFFF">
+                    <ListBox x:Name="list" Width="480" Grid.Row="3" Grid.ColumnSpan="2" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Visible" Foreground="#DEFFFFFF" SelectionChanged="list_SelectionChanged" >
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Margin="20" Width="60">
@@ -94,7 +94,7 @@
                                     		</LinearGradientBrush>
                                     	</StackPanel.Background>
                                    
-                                    <TextBlock HorizontalAlignment="Center" Text="{Binding sol}"/>
+                                    <TextBlock Name="sol_list" HorizontalAlignment="Center" Text="{Binding sol}"/>
                                     </StackPanel>
 
                                     <Image Source="{Binding ImagePath}" Stretch="Uniform" Width="60" Height="50" Margin="0,4,0,0"/>
@@ -131,42 +131,23 @@
                     </StackPanel>
 
                 </Grid>
-            </controls:PivotItem>
-
-            <controls:PivotItem Header="Videos">
-                <Grid>
-                    <ScrollViewer>
-                        <StackPanel Width="auto" Height="auto">
-
-                            <Controls:YouTubeButton YouTubeID="ei1eOZ2BOxQ" Click="OnButtonClick" Foreground="#DE000000" />
-                            <TextBlock Text="REMS ON MARS" Foreground="#DEFFFFFF" FontSize="20"/>
-
-                            <Controls:YouTubeButton YouTubeID="CleG0cQ0JWs" Click="OnButtonClick" Margin="0,20,0,0" />
-                            <TextBlock Text="Curiosity Measures Martian Weather" Foreground="#DEFFFFFF"/>
-
-                            <Controls:YouTubeButton YouTubeID="n4tgkyUBkbY" Click="OnButtonClick" Margin="0,20,0,0" />
-                            <TextBlock Text="Mission MARS ONE" Foreground="#DEFFFFFF"/>
-
-                        </StackPanel>
-                    </ScrollViewer>
-                </Grid>
-            </controls:PivotItem>
+            </controls:PivotItem>       
         </controls:Pivot>
     </Grid>
 
-    <!--<phone:PhoneApplicationPage.ApplicationBar>
+    <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" Mode="Default" Opacity="0.45" ForegroundColor="White" >
 
-            <shell:ApplicationBarIconButton IconUri="/Images/save.png" Text="save"  />
-            <shell:ApplicationBarIconButton IconUri="/Images/delete.png" Text="New" Click="new_click"  />
-            <shell:ApplicationBarIconButton IconUri="/Images/help.png" Text="help" />
-            <shell:ApplicationBarIconButton IconUri="/Images/settings.png" Text="settings"  />
+            <!--<shell:ApplicationBarIconButton IconUri="/Images/save.png" Text="news"  />-->
+            <shell:ApplicationBarIconButton IconUri="/appbar/video.png" Text="video" Click="ApplicationBarIconButton_Click_1" />
+            <shell:ApplicationBarIconButton IconUri="/appbar/about.png" Text="about" Click="ApplicationBarIconButton_Click_2" />
+            <!--<shell:ApplicationBarIconButton IconUri="/Images/settings.png" Text="about"  />-->
 
-            <shell:ApplicationBar.MenuItems>
+            <!--<shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem Text="Videos"  />
                 <shell:ApplicationBarMenuItem Text="About" />
-            </shell:ApplicationBar.MenuItems>
+            </shell:ApplicationBar.MenuItems>-->
 
         </shell:ApplicationBar>
-    </phone:PhoneApplicationPage.ApplicationBar>-->
+    </phone:PhoneApplicationPage.ApplicationBar>
 </phone:PhoneApplicationPage>
