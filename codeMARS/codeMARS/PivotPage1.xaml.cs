@@ -36,12 +36,18 @@ namespace codeMARS
 
           protected override void OnNavigatedTo(NavigationEventArgs e)
             {
+              
 
                 if (appSettings.Contains("json"))
                 {
+                                    
                     updateALL((string)appSettings["json"]); // load the last weather report json data,
                 }
-
+                else
+                {
+                   
+                }
+              
                 work();
 
                 base.OnNavigatedTo(e);
@@ -51,6 +57,8 @@ namespace codeMARS
 
         public void work()
         {
+           
+             
             var client = new WebClient();
             client.DownloadStringCompleted += (sender, args) =>
             {
@@ -78,6 +86,8 @@ namespace codeMARS
                     }
                     #endregion
 
+                   
+             
                     updateALL(json);                   
 
                 }
@@ -88,7 +98,8 @@ namespace codeMARS
 
         public void updateALL(string json)
         {
-            RootObject deserializedData = ReadToObject(json);
+
+            RootObject deserializedData = ReadToObject(json);           
             updateHomePage(deserializedData.results[0]);
             updateWindDirection(deserializedData.results[0]);
             updateArchiveList(deserializedData);

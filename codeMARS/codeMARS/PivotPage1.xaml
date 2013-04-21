@@ -13,7 +13,30 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait"  Orientation="Portrait"
     shell:SystemTray.IsVisible="False"
-    xmlns:Controls="clr-namespace:MyToolkit.Controls;assembly=MyToolkit.Extended">
+    xmlns:Controls="clr-namespace:MyToolkit.Controls;assembly=MyToolkit.Extended"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"  >
+
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardIn"/>
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardIn"/>
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="#FF636363">
@@ -33,24 +56,24 @@
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
 
-                    <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2" >
+                     <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2" >
                         <!--<Image Name="earth_timeImage" HorizontalAlignment="Left" VerticalAlignment="Top" Source="Earth Node.png" Width="38" Height="35" />-->
-                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Name="Earth_timeBlock" VerticalAlignment="Top" Grid.Row="0" Grid.ColumnSpan="2" FontSize="26.667" Height="35" />
+                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" x:Name="Earth_timeBlock" VerticalAlignment="Top" Grid.Row="0" Grid.ColumnSpan="2" FontSize="26.667" Height="35" />
                     </StackPanel>
 
 
                     <StackPanel Margin="0,0,0,1" Grid.Row="1" Grid.Column="0">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock FontSize="80"  FontWeight="Bold"  Grid.Row="1" Grid.Column="0"  HorizontalAlignment="Left" TextWrapping="Wrap" Name="max_tempBlock" VerticalAlignment="Top" />
-                            <TextBlock  Grid.Row="1" Grid.Column="0"  HorizontalAlignment="Left" TextWrapping="Wrap" Name="max_tempBlock2" VerticalAlignment="Bottom" FontSize="26.667" Margin="6,0,0,13" />
+                            <TextBlock FontSize="80"  FontWeight="Bold"  Grid.Row="1" Grid.Column="0"  HorizontalAlignment="Left" TextWrapping="Wrap" x:Name="max_tempBlock" VerticalAlignment="Top" />
+                            <TextBlock  Grid.Row="1" Grid.Column="0"  HorizontalAlignment="Left" TextWrapping="Wrap" x:Name="max_tempBlock2" VerticalAlignment="Bottom" FontSize="26.667" Margin="6,0,0,13" />
                         </StackPanel>
 
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock FontWeight="Bold" FontSize="32" Grid.Row="1" Grid.Column="0"  HorizontalAlignment="Left" TextWrapping="Wrap" Name="min_tempBlock" VerticalAlignment="Top" />
-                            <TextBlock Grid.Row="1" Grid.Column="0"  HorizontalAlignment="Left" TextWrapping="Wrap" Name="min_tempBlock2" VerticalAlignment="Bottom" FontSize="21.333" Margin="6,0,0,2" />
+                            <TextBlock FontWeight="Bold" FontSize="32" Grid.Row="1" Grid.Column="0"  HorizontalAlignment="Left" TextWrapping="Wrap" x:Name="min_tempBlock" VerticalAlignment="Top" />
+                            <TextBlock Grid.Row="1" Grid.Column="0"  HorizontalAlignment="Left" TextWrapping="Wrap" x:Name="min_tempBlock2" VerticalAlignment="Bottom" FontSize="21.333" Margin="6,0,0,2" />
                         </StackPanel>
                     </StackPanel>
-                        <Image Name="sun_image" Width="183"  Stretch="UniformToFill" Height="161" Margin="0" HorizontalAlignment="Right" Grid.Row="1" Grid.Column="1"	 />
+                        <Image x:Name="sun_image" Width="183"  Stretch="UniformToFill" Height="161" Margin="0" HorizontalAlignment="Right" Grid.Row="1" Grid.Column="1"	 />
 
 
                     <StackPanel Margin="0,15,0,0" Grid.Row="2" Grid.Column="0" >
@@ -60,11 +83,11 @@
                     			<GradientStop Color="#FF636363" Offset="0.03"/>
                     		</LinearGradientBrush>
                     	</StackPanel.Background>
-                        <TextBlock  Grid.Row="2" Grid.Column="0"  HorizontalAlignment="Left" TextWrapping="Wrap" Name="pressureBlock" VerticalAlignment="Top" Margin="0,20,0,0" />
-                        <TextBlock  Grid.Row="2" Grid.Column="0"  HorizontalAlignment="Left" TextWrapping="Wrap" Name="ls_Block" VerticalAlignment="Top" Width="auto" />
-                        <TextBlock Name="sol_block2" Grid.Row="2" Grid.Column="0"  HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" />
-                        <TextBlock Name="ls_Block2" Grid.Row="2" Grid.Column="0"  HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" />
-                        <TextBlock Name="sol_block" Grid.Row="2" Grid.Column="0"  HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" />
+                        <TextBlock  Grid.Row="2" Grid.Column="0"  HorizontalAlignment="Left" TextWrapping="Wrap" x:Name="pressureBlock" VerticalAlignment="Top" Margin="0,20,0,0" />
+                        <TextBlock  Grid.Row="2" Grid.Column="0"  HorizontalAlignment="Left" TextWrapping="Wrap" x:Name="ls_Block" VerticalAlignment="Top" Width="auto" />
+                        <TextBlock x:Name="sol_block2" Grid.Row="2" Grid.Column="0"  HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" />
+                        <TextBlock x:Name="ls_Block2" Grid.Row="2" Grid.Column="0"  HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" />
+                        <TextBlock x:Name="sol_block" Grid.Row="2" Grid.Column="0"  HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" />
 
                     </StackPanel>
                    
@@ -75,8 +98,8 @@
                     			<GradientStop Color="#FF636363" Offset="0.03"/>
                     		</LinearGradientBrush>
                     	</StackPanel.Background>
-                        <TextBlock FontSize="64" FontWeight="Bold" Grid.Row="2" Grid.Column="1"  HorizontalAlignment="Right" TextWrapping="Wrap" Name="atm_opacityBlock" VerticalAlignment="Top" />
-                        <TextBlock Name="weather_block" Text="Weather Condition" Grid.Row="2" Grid.Column="1"  HorizontalAlignment="right" TextWrapping="Wrap" VerticalAlignment="Top" />
+                        <TextBlock FontSize="64" FontWeight="Bold" Grid.Row="2" Grid.Column="1"  HorizontalAlignment="Right" TextWrapping="Wrap" x:Name="atm_opacityBlock" VerticalAlignment="Top" />
+                        <TextBlock x:Name="weather_block" Text="Weather Condition" Grid.Row="2" Grid.Column="1"  HorizontalAlignment="right" TextWrapping="Wrap" VerticalAlignment="Top" />
                     </StackPanel>
 
                     <!-- Display Horizontal list of Archive Data -->
@@ -94,7 +117,7 @@
                                     		</LinearGradientBrush>
                                     	</StackPanel.Background>
                                    
-                                    <TextBlock Name="sol_list" HorizontalAlignment="Center" Text="{Binding sol}"/>
+                                    <TextBlock x:Name="sol_list" HorizontalAlignment="Center" Text="{Binding sol}"/>
                                     </StackPanel>
 
                                     <Image Source="{Binding ImagePath}" Stretch="Uniform" Width="60" Height="50" Margin="0,4,0,0"/>
