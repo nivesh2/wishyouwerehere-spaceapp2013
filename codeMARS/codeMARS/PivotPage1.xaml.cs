@@ -65,7 +65,8 @@ namespace codeMARS
 
             pressureBlock.Text = "Pressure : " + r.pressure.ToString("#") + " Pa, " + r.pressure_string;
 
-            ls_Block.Text = season(r.ls) + r.ls.ToString() + "°";
+            ls_Block.Text = season(r.ls);
+            ls_Block2.Text = "Ls = " + r.ls.ToString() + "°";
             sol_block2.Text = season2(r.ls);
 
             if (r.atmo_opacity == null)
@@ -211,22 +212,54 @@ namespace codeMARS
         {
             string s="";
 
-            if (d>=0 && d<90 )
+            if (d>=0 && d<30 )
             {
-                s = "It's Spring Equinox on MARS, Ls = ";
+                s = "Early NH Spring";
                 
             }
-            else if (d>=90 && d<180)
+            else if (d>=30 && d<60)
             {
-                s = "It's Summer Solstice on MARS, Ls = ";
+                s = "NH Spring";
             }
-            else if (d>=180 && d<270)
+            else if (d>=60 && d<90)
             {
-                s = "It's Autumn Equinox on MARS, Ls = ";                
+                s = "Late NH Spring";                
             }
-            else if (d>=270 )
+            else if (d >= 90 && d < 120)
             {
-                s = "It's  Winter Solstice on MARS, Ls = ";
+                s = "Early NH Summer";
+            }
+            else if (d >= 120 && d < 150)
+            {
+                s = "NH Summer";
+            }
+            else if (d >= 150 && d < 180)
+            {
+                s = "Late NH Summer";
+            }
+            else if (d >= 180 && d < 210)
+            {
+                s = "Early NH Fall";
+            }
+            else if (d >= 210 && d < 240)
+            {
+                s = "NH Fall";
+            }
+            else if (d >= 240 && d < 270)
+            {
+                s = "Late NH Fall";
+            }
+            else if (d >= 270 && d < 300)
+            {
+                s = "Early NH Winter";
+            }
+            else if (d >= 300 && d < 330)
+            {
+                s = "NH Winter";
+            }
+            else if (d>=330 )
+            {
+                s = "Late NH Winter";
             }
 
 

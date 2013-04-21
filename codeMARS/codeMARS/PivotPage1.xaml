@@ -56,6 +56,8 @@
                         <TextBlock Text="889 Pa" Grid.Row="2" Grid.Column="0"  HorizontalAlignment="Left" TextWrapping="Wrap" Name="pressureBlock" VerticalAlignment="Top" />
                         <TextBlock Text="It's Winter Solstice on MARS, Ls = 290°" Grid.Row="2" Grid.Column="0"  HorizontalAlignment="Left" TextWrapping="Wrap" Name="ls_Block" VerticalAlignment="Top" Width="auto" />
                         <TextBlock Name="sol_block2" Grid.Row="2" Grid.Column="0"  HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" />
+                        <TextBlock Name="ls_Block2" Grid.Row="2" Grid.Column="0"  HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" />
+
                     </StackPanel>
                    
                     <StackPanel Margin="0" Grid.Row="2" Grid.Column="1" >
